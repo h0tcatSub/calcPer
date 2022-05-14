@@ -6,17 +6,19 @@ def calculate(data):
     count = 0
     quiz_cnt = 0
     accept_cnt = 0
+    process_cnt = 0
 
     for data in file:
         if("---" in data):
-            print(f"{quiz_cnt + 1} : 正解問題数={accept}問")
-            print(f"{quiz_cnt + 1} : 間違い数={count - accept}問")
-            print(f"{quiz_cnt + 1} : 正解率={round((accept / count) * 100)}%")
+            print(f"{process_cnt + 1} : 正解問題数={accept}問")
+            print(f"{process_cnt + 1} : 間違い数={count - accept}問")
+            print(f"{process_cnt + 1} : 正解率={round((accept / count) * 100)}%")
             print("---")
             quiz_cnt += count
             count = 0
             accept_cnt += accept
             accept = 0
+            process_cnt += 1
             continue
         if("O" in data):
             accept += 1
