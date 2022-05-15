@@ -15,10 +15,11 @@ def calculate(data):
             print(f"{process_cnt + 1} : 正解率={round((accept / count) * 100)}%")
             print("---")
             quiz_cnt += count
-            count = 0
             accept_cnt += accept
-            accept = 0
             process_cnt += 1
+            
+            accept = 0
+            count = 0
             continue
         if("O" in data):
             accept += 1
